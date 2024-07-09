@@ -11,9 +11,6 @@ public:
             rev = rev*10+last;
 
         }
-        if(copyx == rev){
-            return true;
-        }
-        else{return false;}
+        return rev == copyx;
     }
 };
