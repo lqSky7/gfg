@@ -1,0 +1,10 @@
+# Ignore VSCode files
+.vscode/
+
+# Ignore C/C++ build files
+*.o
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
