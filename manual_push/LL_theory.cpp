@@ -18,13 +18,57 @@ class Node{
     }
 };
 
+void display(Node* head, int length) 
+{
+    if(head-> next == nullptr){
+        
+        return;
+    }
+
+    Node* mover = head; 
+    for(int k=0;k<length+1;k++){
+
+        cout<<mover->data<<" ";
+        mover = mover->next;
+    }
+}
+
+int lennn(Node* head){
+    int cnt =0;
+    Node* mover = head;
+    for(int i = 0;;i++){
+        if(mover->next != 0){
+            cnt++;
+            mover = mover->next;
+
+        }
+        else{
+            cout<<cnt<<endl;
+            return cnt;
+        }
+    }
+}
+
+Node* arrToNode(vector<int> &hi){
+
+    Node* head = new Node(hi[0], nullptr);
+
+
+    Node* mover = head;
+    for(int k=1;k<hi.size();k++){
+        Node* temp = new Node(hi[k], nullptr);
+        mover->next = temp;
+        mover = mover->next;
+        // we can also do: mover = temp;, they mean exactly the same thing as inside any node, pointer stored is of next element(which we just stored as mover-> next = temp, or we can directly pass the value of temp. they aree exactly the same thing.  )
+        
+    }
+        return head;
+}
 
 int main(){
-    Node* y =  new Node(4, nullptr); 
-    
-
-    cout << y<<endl; //prints the memory address of x, which is stored in y.
-    cout <<y->data<<endl; //prints the data of x, which is 4.
-    cout <<y->next<<endl; //prints zero, as the pointer stored was nullptr. 
-
+    vector<int> hi = {1,2,3,4};
+    Node* hello = arrToNode(hi);
+    int length = lennn(hello);
+    display(hello, length);
+    return 0;
 }
