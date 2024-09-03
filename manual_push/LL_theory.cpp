@@ -11,6 +11,11 @@ class Node{
         data = a;
         next = b;
     }
+    public:
+    Node(int a){
+        data = a;
+        next = nullptr;
+    }
 };
 
 
