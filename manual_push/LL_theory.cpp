@@ -15,8 +15,8 @@ class Node{
 
 
 int main(){
-    Node x = Node(4, nullptr);
-    Node* y = &x;
+    Node* y =  new Node(4, nullptr); 
+    
 
     cout << y<<endl; //prints the memory address of x, which is stored in y.
     cout <<y->data<<endl; //prints the data of x, which is 4.
