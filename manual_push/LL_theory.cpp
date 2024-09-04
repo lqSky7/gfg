@@ -50,6 +50,44 @@ int lennn(Node* head){
 }
 
 
+Node* deleteNodeWithValueX(Node* &head, int X) {
+        // int cnt = 0;
+        if(head==nullptr){
+            return head;
+        }
+
+        if(head -> val == X){
+            Node* temp = head;
+            head = head->next;
+            delete(temp);
+            
+            return head;
+            
+        }
+        Node* hi = head;
+        Node* hiBefore = nullptr;
+        while(hi != nullptr){
+            if(hi->data == X){
+                hiBefore -> next = hiBefore->next->next;
+                delete(hi);
+                break;
+            }
+
+            hiBefore = hi;
+            hi = hi->next;
+                        
+
+        }
+        return head;
+    };
+
+
+
+
+
+
+
+
 
 Node* deleteKthNode(Node* &head, int k) {
 
