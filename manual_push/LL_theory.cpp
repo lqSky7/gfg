@@ -57,9 +57,10 @@ Node* deleteKthNode(Node* &head, int k) {
             return nullptr;
         }
         if(k==1){
-            
+            Node* temp = head->next;
             //means we're removing head.
-            head = head -> next;
+            head = temp;
+            delete(temp);
             // delete( how to free the memory??)
             return head;
         }
@@ -80,36 +81,6 @@ Node* deleteKthNode(Node* &head, int k) {
         }
         return head;
     };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Node* arrToNode(vector<int> &hi){
 
